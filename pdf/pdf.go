@@ -20,12 +20,12 @@ type Processor struct {
 }
 
 func (p *Processor) Process() {
-	defer func() {
-		if r := recover(); r != nil {
-			p.rmdir()
-			fmt.Println("Process could not be completed... cleaning")
-		}
-	}()
+	//defer func() {
+	//	if r := recover(); r != nil {
+	//		p.rmdir()
+	//		fmt.Println("Process could not be completed... cleaning")
+	//	}
+	//}()
 	p.cpuCores = runtime.NumCPU()
 	p.generateRandomTmpDir()
 	p.mkdir()
